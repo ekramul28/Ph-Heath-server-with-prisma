@@ -70,10 +70,27 @@ const deleteAdmin = async (req: Request, res: Response) => {
     });
   }
 };
+const softDeleteAdmin = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+
+    const result = await AdminService.softDeleteAdminFromDB(id);
+    res.status(200).json({
+      message: "Admin delete successfully",
+      data: result,
+    });
+  } catch (error: any) {
+    res.status(500).json({
+      message: error?.message || "something went wrong",
+      error: error,
+    });
+  }
+};
 
 export const AdminController = {
   getAdmin,
   getAdminById,
   updateAdmin,
   deleteAdmin,
+  softDeleteAdmin,
 };
