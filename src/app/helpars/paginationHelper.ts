@@ -1,8 +1,8 @@
 type IOptions = {
   page?: number;
   limit?: number;
-  sortOrder?: string;
-  sortBy: string;
+  sortOrder?: string | undefined;
+  sortBy?: string | undefined;
 };
 
 type IOptionsResult = {
