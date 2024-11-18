@@ -1,8 +1,8 @@
 type IOptions = {
   page?: number;
   limit?: number;
-  sortOrder?: string | undefined;
-  sortBy?: string | undefined;
+  sortOrder?: string;
+  sortBy?: string;
 };
 
 type IOptionsResult = {
@@ -12,6 +12,7 @@ type IOptionsResult = {
   sortBy: string;
   sortOrder: string;
 };
+
 const calculatePagination = (options: IOptions): IOptionsResult => {
   const page: number = Number(options.page) || 1;
   const limit: number = Number(options.limit) || 10;
@@ -19,6 +20,7 @@ const calculatePagination = (options: IOptions): IOptionsResult => {
 
   const sortBy: string = options.sortBy || "createdAt";
   const sortOrder: string = options.sortOrder || "desc";
+
   return {
     page,
     limit,
@@ -28,4 +30,6 @@ const calculatePagination = (options: IOptions): IOptionsResult => {
   };
 };
 
-export default calculatePagination;
+export const paginationHelper = {
+  calculatePagination,
+};
