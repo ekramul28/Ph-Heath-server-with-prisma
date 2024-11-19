@@ -3,7 +3,6 @@ import {
   Doctor,
   Patient,
   Prisma,
-  User,
   UserRole,
   UserStatus,
 } from "@prisma/client";

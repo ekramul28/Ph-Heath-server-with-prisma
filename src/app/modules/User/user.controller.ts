@@ -1,6 +1,5 @@
 import { Request, RequestHandler, Response } from "express";
 import httpStatus from "http-status";
-
 import catchAsync from "../../middlewares/catchAsync";
 import sendResponse from "../shared/sendResponse";
 import { userService } from "./user.service";
@@ -13,7 +12,7 @@ const createAdmin = catchAsync(async (req: Request, res: Response) => {
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: "Admin Created successfuly!",
+    message: "Admin Created successfully!",
     data: result,
   });
 });
@@ -23,7 +22,7 @@ const createDoctor = catchAsync(async (req: Request, res: Response) => {
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: "Doctor Created successfuly!",
+    message: "Doctor Created successfully!",
     data: result,
   });
 });
@@ -33,7 +32,7 @@ const createPatient = catchAsync(async (req: Request, res: Response) => {
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: "Patient Created successfuly!",
+    message: "Patient Created successfully!",
     data: result,
   });
 });
